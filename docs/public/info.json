@@ -1,0 +1,28 @@
+{
+  "name": "phparm",
+  "nameWithAuthor": "phparm/phparm",
+  "authors": [{
+    "name": "GHJayce",
+    "email": "jaycedeng@outlook.com",
+    "homepage": "https://github.com/GHJayce",
+    "role": "Developer"
+  }],
+  "githubUrl": "https://github.com/phparm/phparm",
+  "docUrl": "https://phparm.github.io/phparm",
+  "changelogUrl": "https://github.com/phparm/phparm/blob/main/changelog.md",
+  "issueUrl": "https://github.com/phparm/phparm/issues",
+  "packages": {
+    "entity": {
+      "name": "entity",
+      "nameWithAuthor": "phparm/entity",
+      "githubUrl": "https://github.com/phparm/entity",
+      "issueUrl": "https://github.com/phparm/entity/issues"
+    },
+    "url": {
+      "name": "url",
+      "nameWithAuthor": "phparm/url",
+      "githubUrl": "https://github.com/phparm/url",
+      "issueUrl": "https://github.com/phparm/url/issues"
+    }
+  }
+}
