@@ -1,0 +1,7 @@
+.idea
+vendor
+composer.lock
+node_modules
+docs/.vitepress/cache
+docs/.vitepress/dist
+.env
