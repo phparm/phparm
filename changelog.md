@@ -1,9 +1,8 @@
 
-## {{date}}
-### {{version}}
+## 2025-11-02
+### v1.0.1
 - 修正url包的依赖包名称
 
-## 2025-11-02
 ### v1.0.0
 - 采用单仓库（Monorepo）开发多个子包（sub-packages）的模式，尽可能多的参考、借鉴和遵循php-fig、laravel和symfony提供的接口来实现本库。
 - 新增`Entity`实体属性包。

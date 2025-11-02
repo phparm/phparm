@@ -48,8 +48,8 @@
         ]
     },
     "replace": {
-        "phparm/entity": "1.0.0",
-        "phparm/url": "1.0.0"
+        "phparm/entity": "1.0.1",
+        "phparm/url": "1.0.1"
     },
     "support": {
         "issues": "https://github.com/phparm/phparm/issues",
