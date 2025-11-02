@@ -45,6 +45,7 @@
     },
     "autoload-dev": {
         "psr-4": {
+            "Config\\MonorepoBuilder\\": "config/monorepo-builder",
             "PhparmTest\\Entity\\": "src/Entity/tests/",
             "PhparmTest\\Url\\": "src/Url/tests/"
         }
