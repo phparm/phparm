@@ -23,6 +23,6 @@ return static function (MBConfig $mbConfig): void {
         SetNextMutualDependenciesReleaseWorker::class,
         UpdateBranchAliasReleaseWorker::class,
         PushNextDevReleaseWorker::class,
-        //PushTagReleaseWorker::class,
+        PushTagReleaseWorker::class,
     ]);
 };

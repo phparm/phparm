@@ -23,8 +23,8 @@
         "docs": "https://phparm.github.io/phparm"
     },
     "require": {
-        "php": "^8.0",
-        "illuminate/contracts": "^8.83"
+        "php": "^8.0.2",
+        "illuminate/contracts": "^9.52"
     },
     "autoload": {
         "psr-4": {
