@@ -37,6 +37,25 @@ composer require phparm/path
 ```php
 <?php
 
+use Phparm\Path\Path;
+use Phparm\Path\Option\PathOption;
+use Phparm\Path\File;
+
+// example 1
+$dir = __DIR__;
+// list的结果集是: \Phparm\Path\File[]
+$list = Path::make($dir)->listAll();
+
+// example 2
+$fileCallback = static function (\Phparm\Path\File $file) use ($info, $packageDirPath) {
+    // 做某事...
+    // 可以自定义返回item的数据
+    return [];
+};
+$option = PathOption::make()
+    ->setCallable($fileCallback);
+$list = Path::make($packageDirPath)
+    ->listAll($option);
 ```
 
 ## File

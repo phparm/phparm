@@ -38,8 +38,7 @@ export default defineAdditionalConfig({
 
     notFound: {
       title: '页面未找到',
-      quote:
-        '但如果你不改变方向，并且继续寻找，你可能最终会到达你所前往的地方。',
+      quote: '但如果你不改变方向，并且继续寻找，你可能最终会到达你所前往的地方。',
       linkLabel: '前往首页',
       linkText: '带我回首页'
     },
@@ -71,6 +70,7 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
       items: [
         {text: 'Entity', link: 'package/entity'},
         {text: 'Url', link: 'package/url'},
+        {text: 'Path', link: 'package/path'},
       ]
     }
   ]

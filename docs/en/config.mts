@@ -38,8 +38,7 @@ export default defineAdditionalConfig({
 
     notFound: {
       title: 'PAGE NOT FOUND',
-      quote:
-        'But if you don\'t change your direction, and if you keep looking, you may end up where you are heading.',
+      quote: 'But if you don\'t change your direction, and if you keep looking, you may end up where you are heading.',
       linkLabel: 'Take me home',
       linkText: 'Take me home'
     },
@@ -70,6 +69,7 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
       items: [
         {text: 'Entity', link: 'package/entity'},
         {text: 'Url', link: 'package/url'},
+        {text: 'Path', link: 'package/path'},
       ]
     }
   ]

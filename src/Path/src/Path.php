@@ -17,7 +17,7 @@ class Path extends StringValue
     {
         $result = [];
         if (!is_dir($this->value)) {
-            throw new RuntimeException(sprintf('Directory "%s" does not exists', $this->value));
+            throw new RuntimeException(sprintf('Not directory "%s"', $this->value));
         }
         $dirObject = opendir($this->value);
         while (($basename = readdir($dirObject)) !== false) {
