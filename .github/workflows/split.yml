@@ -32,6 +32,9 @@ jobs:
           -
             local_path: 'Url'
             split_repository: 'url'
+          -
+            local_path: 'Path'
+            split_repository: 'path'
 
     steps:
       -   uses: actions/checkout@v2
