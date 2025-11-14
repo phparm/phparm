@@ -1,15 +1,16 @@
 {
-    "name": "phparm/entity",
-    "description": "php entity attribute.",
+    "name": "phparm/path",
+    "description": "Path tool library.",
     "license": "MIT",
     "type": "library",
     "keywords": [
         "php",
-        "attribute",
-        "entity",
-        "property"
+        "path",
+        "library",
+        "dir",
+        "file"
     ],
-    "homepage": "https://github.com/phparm/entity",
+    "homepage": "https://github.com/phparm/path",
     "authors": [
         {
             "name": "GHJayce",
@@ -24,16 +25,17 @@
     },
     "require": {
         "php": "^8.0.2",
+        "phparm/entity": "^1.1.1",
         "illuminate/contracts": "^9.52"
     },
     "autoload": {
         "psr-4": {
-            "Phparm\\Entity\\": "src/"
+            "Phparm\\Path\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PhparmTest\\Entity\\": "tests/"
+            "PhparmTest\\Path\\": "tests/"
         }
     },
     "require-dev": {

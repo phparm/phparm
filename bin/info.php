@@ -49,11 +49,12 @@ $composerFilePath = "$baseDir/composer.json";
 writeToComposer($composerFilePath, $info);
 
 $packageDirPath = "$baseDir/src";
-$dirObject = opendir($packageDirPath);
-while (($fileFullName = readdir($dirObject)) !== false) {
-    if ($fileFullName !== '.' && $fileFullName !== '..') {
-        $packageInfo = array_replace_recursive($info, $info['packages'][strtolower($fileFullName)]);
-        writeToComposer($packageDirPath . "/" . $fileFullName . "/composer.json", $packageInfo);
-    }
-}
-closedir($dirObject);
+$fileCallback = static function (\Phparm\Path\File $file) use ($info, $packageDirPath) {
+    $basename = $file->basename;
+    $packageInfo = array_replace_recursive($info, $info['packages'][strtolower($basename)]);
+    writeToComposer($packageDirPath . "/" . $basename . "/composer.json", $packageInfo);
+};
+$option = \Phparm\Path\Option\PathOption::make()
+    ->setCallable($fileCallback);
+\Phparm\Path\Path::make($packageDirPath)
+    ->listAll($option);

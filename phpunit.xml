@@ -20,5 +20,8 @@
         <testsuite name="Url">
             <directory suffix=".php">src/Url/tests</directory>
         </testsuite>
+        <testsuite name="Path">
+            <directory suffix=".php">src/Path/tests</directory>
+        </testsuite>
     </testsuites>
 </phpunit>

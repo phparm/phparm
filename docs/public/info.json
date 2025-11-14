@@ -15,14 +15,17 @@
     "entity": {
       "name": "entity",
       "nameWithAuthor": "phparm/entity",
-      "githubUrl": "https://github.com/phparm/entity",
-      "issueUrl": "https://github.com/phparm/entity/issues"
+      "githubUrl": "https://github.com/phparm/entity"
     },
     "url": {
       "name": "url",
       "nameWithAuthor": "phparm/url",
-      "githubUrl": "https://github.com/phparm/url",
-      "issueUrl": "https://github.com/phparm/url/issues"
+      "githubUrl": "https://github.com/phparm/url"
+    },
+    "path": {
+      "name": "path",
+      "nameWithAuthor": "phparm/path",
+      "githubUrl": "https://github.com/phparm/path"
     }
   }
 }
