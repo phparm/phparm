@@ -46,9 +46,10 @@ abstract class Attribute implements IteratorAggregate, Arrayable, Jsonable, Stri
 
     /**
      * @param null|Arrayable<TKey,TValue>|Jsonable|JsonSerializable|static<TKey,TValue> $attributes
+     * @param Option|null $option
      * @return array<TKey,TValue>
      */
-    protected function transform($attributes): array
+    protected function transform($attributes, ?Option $option = null): array
     {
         if (is_null($attributes)) {
             return [];

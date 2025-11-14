@@ -26,6 +26,7 @@ class StringValue extends Attribute
 
     /**
      * @param null|Arrayable<TKey,TValue>|Jsonable|JsonSerializable|static<TKey,TValue>|string $attributes
+     * @param Option|null $option
      * @return array<TKey,TValue>
      */
     protected function transform($attributes, ?Option $option = null): array

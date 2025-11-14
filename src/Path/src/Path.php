@@ -24,7 +24,7 @@ class Path extends StringValue
             if ($basename !== '.' && $basename !== '..') {
                 $absolutePath = $this->value . DIRECTORY_SEPARATOR . $basename;
                 $callable = $option?->getCallable();
-                $fileResult = File::make(pathinfo($absolutePath));
+                $fileResult = File::make($absolutePath);
                 if ($callable && is_callable($callable)) {
                     $callRes = call_user_func($callable, file: $fileResult);
                     if ($callRes) {
@@ -35,7 +35,7 @@ class Path extends StringValue
             }
         }
         closedir($dirObject);
-        if ($option?->sort) {
+        if ($option?->sort ?? true) {
             ksort($result, $option?->sortFlags ?? SORT_REGULAR);
         }
         return array_values($result);
