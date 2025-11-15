@@ -1,6 +1,6 @@
 # Path
 
-## 安装
+## Installation
 
 ```bash
 composer require phparm/path
@@ -8,30 +8,30 @@ composer require phparm/path
 
 ## Path
 
-`\Phparm\Path\Path` 继承于 `\Phparm\Entity\StringValue`
+The class `\Phparm\Path\Path` extends `\Phparm\Entity\StringValue`.
 
-### 概念
+### Concepts
 
-`/path-a/path-b/file.readme`
+Given `/path-a/path-b/file.readme`:
 
-- 根路径：指 `/path-a/` 部分。
-- 绝对路径：指 `/path-a/path-b/file.readme` 部分。
-- 相对路径：指 `./file.readme`、`./path-b/`、`./path-b/file.readme`。
-- 目录名称：指 `/path-a/path-b` 部分。
-- 基本名称：指 `file.readme` 部分。
-- 文件名称：指 `file` 部分。
-- 文件拓展：指 `readme` 部分。
+- Root path: the `/path-a/` portion.
+- Absolute path: the `/path-a/path-b/file.readme` portion.
+- Relative path: examples like `./file.readme`, `./path-b/`, `./path-b/file.readme`.
+- Directory name: the `/path-a/path-b` portion.
+- Basename: the `file.readme` portion.
+- Filename: the `file` portion.
+- File extension: the `readme` portion.
 
-### 方法
+### Methods
 
-| 方法                 | 说明                    |
-|:-------------------|:----------------------|
-| `listAll()`        | 列出路径下的所有项，去掉`.`和`..`。 |
-| `makeUsable()`     | 如果路径不存在将创建。           |
-| `Path::join()`     | 加入多个路径。               |
-| `Path::absolute()` | 将路径处理成绝对路径。           |
+| Method               | Description                          |
+|:--------------------:|:------------------------------------:|
+| `listAll()`          | List all items under the path, excluding `.` and `..`. |
+| `makeUsable()`       | Create the path if it does not exist. |
+| `Path::join()`       | Join multiple path segments.         |
+| `Path::absolute()`   | Resolve the path to an absolute path. |
 
-### 使用
+### Usage
 
 #### listAll
 ```php
@@ -43,13 +43,13 @@ use Phparm\Path\File;
 
 // example 1
 $dir = __DIR__;
-// list的结果集是: \Phparm\Path\File[]
+// The returned list is: \Phparm\Path\File[]
 $list = Path::make($dir)->listAll();
 
 // example 2
 $fileCallback = static function (\Phparm\Path\File $file) use ($info, $packageDirPath) {
-    // 做某事...
-    // 可以自定义返回item的数据
+    // do something...
+    // you can customize the data returned for each item
     return [];
 };
 $option = PathOption::make()
@@ -110,19 +110,20 @@ echo $path; // /path-b
 
 ## File
 
-`\Phparm\Path\File` 继承于 `\Phparm\Entity\Attribute`
+The class `\Phparm\Path\File` extends `\Phparm\Entity\Attribute`.
 
-[pathinfo](https://www.php.net/manual/zh/function.pathinfo.php)的对象版本，属性值与其一致。
+It is an object-oriented representation of [pathinfo](https://www.php.net/manual/en/function.pathinfo.php); its properties correspond to the same fields.
 
-### 方法
+### Methods
 
-| 方法                 | 说明          |
-|:-------------------|:------------|
-| `isDir()`        | 是否为目录。      |
-| `absolute()`     | 返回绝对路径。     |
+| Method            | Description        |
+|:-----------------:|:------------------:|
+| `isDir()`         | Whether the path is a directory. |
+| `absolute()`      | Return the absolute path.         |
 
-### 使用
-目录结构如下
+### Usage
+
+Directory structure:
 ```txt
 ├── folder1/
 │   ├── file1.txt
@@ -130,7 +131,8 @@ echo $path; // /path-b
 └── folder2/
     └── file2.txt
 ```
-示例
+
+Examples:
 ```php
 <?php
 
