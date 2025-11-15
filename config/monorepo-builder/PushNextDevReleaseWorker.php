@@ -23,10 +23,7 @@ class PushNextDevReleaseWorker implements ReleaseWorkerInterface
 
     public function work(Version $version): void
     {
-        $gitAddCommitCommand = sprintf(
-            'git push origin "%s"',
-            $this->branchName
-        );
+        $gitAddCommitCommand = 'git add . && git commit --allow-empty -m "release"';
 
         $this->processRunner->run($gitAddCommitCommand);
     }
