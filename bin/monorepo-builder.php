@@ -20,9 +20,9 @@ return static function (MBConfig $mbConfig): void {
         UpdateReplaceReleaseWorker::class,
         SetCurrentMutualDependenciesReleaseWorker::class,
         AddTagToChangelogReleaseWorker::class,
-        SetNextMutualDependenciesReleaseWorker::class,
-        UpdateBranchAliasReleaseWorker::class,
-//        TagVersionReleaseWorker::class,
+//        SetNextMutualDependenciesReleaseWorker::class,
+//        UpdateBranchAliasReleaseWorker::class,
+        TagVersionReleaseWorker::class,
 //        PushNextDevReleaseWorker::class,
 //        PushTagReleaseWorker::class,
     ]);
