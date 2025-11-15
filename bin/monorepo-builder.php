@@ -15,6 +15,7 @@ use Config\MonorepoBuilder\TagVersionReleaseWorker;
 return static function (MBConfig $mbConfig): void {
     $mbConfig->packageDirectories([dirname(__DIR__) . '/src']);
     // release workers - in order to execute
+    $mbConfig->disableDefaultWorkers();
     $mbConfig->workers([
         UpdateReplaceReleaseWorker::class,
         SetCurrentMutualDependenciesReleaseWorker::class,
