@@ -22,7 +22,7 @@ return static function (MBConfig $mbConfig): void {
         TagVersionReleaseWorker::class,
         SetNextMutualDependenciesReleaseWorker::class,
         UpdateBranchAliasReleaseWorker::class,
-        PushNextDevReleaseWorker::class,
-        PushTagReleaseWorker::class,
+//        PushNextDevReleaseWorker::class,
+//        PushTagReleaseWorker::class,
     ]);
 };
