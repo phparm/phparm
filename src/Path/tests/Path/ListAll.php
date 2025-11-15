@@ -18,6 +18,7 @@ class ListAll extends TestCase
             File::make(pathinfo(Path::join($dir, 'Absolute.php'))),
             File::make(pathinfo(Path::join($dir, 'Join.php'))),
             File::make(pathinfo(Path::join($dir, 'ListAll.php'))),
+            File::make(pathinfo(Path::join($dir, 'MakeUsable.php'))),
         ];
         $this->assertEquals($expect, $actual);
     }

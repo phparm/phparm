@@ -17,6 +17,13 @@ class Absolute extends TestCase
         $this->assertSame($expect, $actual);
     }
 
+    public function testWithoutRootPath(): void
+    {
+        $actual = Path::absolute('./Path/');
+        $expect = '/Path/';
+        $this->assertSame($expect, $actual);
+    }
+
     public function testWithBackslash(): void
     {
         $actual = Path::absolute('.\/Path/');
