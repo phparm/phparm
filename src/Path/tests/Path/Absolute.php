@@ -27,7 +27,7 @@ class Absolute extends TestCase
     public function testWithBackslash(): void
     {
         $actual = Path::absolute('.\/Path/');
-        $expect = '/.\/Path/';
+        $expect = '/Path/';
         $this->assertSame($expect, $actual);
     }
 }

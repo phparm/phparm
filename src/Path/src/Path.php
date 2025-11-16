@@ -53,11 +53,15 @@ class Path extends StringValue
 
     public static function join(...$paths): string
     {
-        $lastPath = end($paths);
-        $lastDirSeparator = str_ends_with($lastPath, DIRECTORY_SEPARATOR);
         $result = [];
-        foreach ($paths as $path) {
-            if (str_starts_with($path, './')) {
+        $start = current($paths);
+        $end = end($paths);
+        if (str_starts_with($start, DIRECTORY_SEPARATOR) || str_starts_with($start, '\\')) {
+            $result[] = '';
+        }
+        foreach ($paths as $index => $path) {
+            $path = str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $path);
+            if ($index !== 0 && str_starts_with($path, './')) {
                 $path = trim($path, '\\/.');
             } else {
                 $path = trim($path, '\\/');
@@ -67,14 +71,13 @@ class Path extends StringValue
             }
             $result[] = $path;
         }
-        $return = DIRECTORY_SEPARATOR . implode(DIRECTORY_SEPARATOR, $result);
-        if ($lastDirSeparator) {
-            $return .= DIRECTORY_SEPARATOR;
+        if (str_ends_with($end, DIRECTORY_SEPARATOR) || str_ends_with($end, '\\')) {
+            $result[] = '';
         }
-        return $return;
+        return implode(DIRECTORY_SEPARATOR, $result);
     }
 
-    public static function absolute(string $path, string $rootPath = ''): string
+    public static function absolute(string $path, string $rootPath = '/'): string
     {
         if (!str_starts_with($path, '/')) {
             if (str_starts_with($path, './')) {

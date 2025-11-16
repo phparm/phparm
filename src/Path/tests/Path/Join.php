@@ -44,7 +44,49 @@ class Join extends TestCase
     public function testBothWithRelativePath(): void
     {
         $actual = Path::join('./dir\-a/', './path-a\/');
-        $expect = DIRECTORY_SEPARATOR . 'dir\-a' . DIRECTORY_SEPARATOR . 'path-a/';
+        $expect = './dir/-a' . DIRECTORY_SEPARATOR . 'path-a/';
+        $this->assertSame($expect, $actual);
+    }
+
+    public function testBothWithBackslashRelativePath(): void
+    {
+        $actual = Path::join('.\dir\-a/', '.\path-a\/');
+        $expect = './dir/-a' . DIRECTORY_SEPARATOR . 'path-a/';
+        $this->assertSame($expect, $actual);
+    }
+
+    public function testHiddenDirRelativePath(): void
+    {
+        $actual = Path::join('/.ssh/', './id_rsa.pub');
+        $expect = '/.ssh' . DIRECTORY_SEPARATOR . 'id_rsa.pub';
+        $this->assertSame($expect, $actual);
+    }
+
+    public function testFirstHiddenDirRelativePath(): void
+    {
+        $actual = Path::join('.ssh/', './id_rsa.pub');
+        $expect = '.ssh' . DIRECTORY_SEPARATOR . 'id_rsa.pub';
+        $this->assertSame($expect, $actual);
+    }
+
+    public function testFirstMoreSlashRelativePath(): void
+    {
+        $actual = Path::join('.//dir\-a/', './path-a\/');
+        $expect = './/dir/-a' . DIRECTORY_SEPARATOR . 'path-a/';
+        $this->assertSame($expect, $actual);
+    }
+
+    public function testBackslash(): void
+    {
+        $actual = Path::join('Author\Path', 'Func\A\B');
+        $expect = 'Author/Path' . DIRECTORY_SEPARATOR . 'Func/A/B';
+        $this->assertSame($expect, $actual);
+    }
+
+    public function testStartEndBackslash(): void
+    {
+        $actual = Path::join('\Author\Path', 'Func\\');
+        $expect = '/Author/Path' . DIRECTORY_SEPARATOR . 'Func/';
         $this->assertSame($expect, $actual);
     }
 }
