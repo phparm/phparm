@@ -49,9 +49,9 @@
         ]
     },
     "replace": {
-        "phparm/entity": "1.2.1",
-        "phparm/path": "1.2.1",
-        "phparm/url": "1.2.1"
+        "phparm/entity": "1.2.2",
+        "phparm/path": "1.2.2",
+        "phparm/url": "1.2.2"
     },
     "support": {
         "issues": "https://github.com/phparm/phparm/issues",
