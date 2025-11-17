@@ -7,16 +7,19 @@ namespace Phparm\Path\Option;
 use Phparm\Entity\Attribute;
 
 /**
+ * ========== property_hook_method ==========
  * @method int getPermissions()
- * @method self setPermissions(int $permissions)
  * @method bool getRecursive()
- * @method self setRecursive(bool $recursive)
  * @method bool getSort()
- * @method self setSort(bool $sort)
  * @method int getSortFlags()
- * @method self setSortFlags(int $sortFlags)
- * @method mixed getCallable()
- * @method self setCallable(mixed $callable)
+ * @method mixed|null getCallable()
+ *
+ * @method $this setPermissions(int $permissions)
+ * @method $this setRecursive(bool $recursive)
+ * @method $this setSort(bool $sort)
+ * @method $this setSortFlags(int $sortFlags)
+ * @method $this setCallable(mixed|null $callable)
+ * ========== property_hook_method ==========
  */
 class PathOption extends Attribute
 {

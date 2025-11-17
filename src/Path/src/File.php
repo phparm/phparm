@@ -7,6 +7,19 @@ namespace Phparm\Path;
 use Phparm\Entity\Attribute;
 use Phparm\Entity\Option;
 
+/**
+ * ========== property_hook_method ==========
+ * @method string getDirname()
+ * @method string getBasename()
+ * @method string getFilename()
+ * @method string getExtension()
+ *
+ * @method $this setDirname(string $dirname)
+ * @method $this setBasename(string $basename)
+ * @method $this setFilename(string $filename)
+ * @method $this setExtension(string $extension)
+ * ========== property_hook_method ==========
+ */
 class File extends Attribute
 {
     public string $dirname;

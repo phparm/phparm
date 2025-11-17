@@ -12,8 +12,11 @@ use JsonSerializable;
  * @template TKey of array-key
  * @template TValue
  *
+ * ========== property_hook_method ==========
  * @method string getValue()
- * @method self setValue(string $value)
+ *
+ * @method $this setValue(string $value)
+ * ========== property_hook_method ==========
  */
 class StringValue extends Attribute
 {

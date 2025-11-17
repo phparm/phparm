@@ -15,8 +15,25 @@ use function \parse_url;
  * @template TKey of array-key
  * @template TValue
  *
+ * ========== property_hook_method ==========
+ * @method string getScheme()
+ * @method string getHost()
+ * @method int getPort()
+ * @method string getUser()
+ * @method string getPass()
+ * @method string getPath()
  * @method Query|null getQuery()
- * @method self setQuery(Query|null $query)
+ * @method string getFragment()
+ *
+ * @method $this setScheme(string $scheme)
+ * @method $this setHost(string $host)
+ * @method $this setPort(int $port)
+ * @method $this setUser(string $user)
+ * @method $this setPass(string $pass)
+ * @method $this setPath(string $path)
+ * @method $this setQuery(Query|null $query)
+ * @method $this setFragment(string $fragment)
+ * ========== property_hook_method ==========
  */
 class Url extends Attribute
 {

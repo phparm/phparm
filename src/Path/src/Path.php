@@ -8,6 +8,13 @@ use Phparm\Entity\StringValue;
 use Phparm\Path\Option\PathOption;
 use RuntimeException;
 
+/**
+ * ========== property_hook_method ==========
+ * @method string getValue()
+ *
+ * @method $this setValue(string $value)
+ * ========== property_hook_method ==========
+ */
 class Path extends StringValue
 {
     /**
