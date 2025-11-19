@@ -12,7 +12,9 @@ class MakeUsable extends TestCase
     public function testPathNotExists(): void
     {
         $path = Path::join(dirname(__DIR__, 4), 'runtime', 'path-a', 'path-b');
-        rmdir($path);
+        if (is_dir($path)) {
+            rmdir($path);
+        }
         $this->assertFalse(is_dir($path));
         Path::make($path)
             ->makeUsable();

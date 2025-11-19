@@ -60,6 +60,7 @@ class Path extends StringValue
 
     public static function join(...$paths): string
     {
+        $paths = array_values(array_filter(array_map(static fn($item) => trim($item), $paths)));
         $result = [];
         $start = current($paths);
         $end = end($paths);

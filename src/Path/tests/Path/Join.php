@@ -25,6 +25,13 @@ class Join extends TestCase
         $this->assertSame($expect, $actual);
     }
 
+    public function testEmptyPath(): void
+    {
+        $actual = Path::join('', '  ', '	', '/path-b', '	', '', 'cache.json', '', '	');
+        $expect = '/path-b/cache.json';
+        $this->assertSame($expect, $actual);
+    }
+
     public function testWithSlashPath(): void
     {
         $dir = __DIR__;
