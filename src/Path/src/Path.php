@@ -48,14 +48,14 @@ class Path extends StringValue
         return array_values($result);
     }
 
-    public function makeUsable(?PathOption $option = null): bool
+    public function makeUsable(?PathOption $option = null): self
     {
         if (!is_dir($this->value)) {
             if (!mkdir($this->value, $option?->getPermissions() ?? 0777, $option?->getRecursive() ?? true) && !is_dir($this->value)) {
                 throw new RuntimeException(sprintf('Failed to create directory "%s"', $this->value));
             }
         }
-        return true;
+        return $this;
     }
 
     public static function join(...$paths): string

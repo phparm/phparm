@@ -2,6 +2,10 @@
 {{date}}
 {{version}}
 - `Path::join`过滤空字符串参数。
+- 引入`phparm/contract-serialization`包，去除`illuminate/contracts`包，为什么？
+  - 版本号不好管理，会跟着laravel走。
+- `phparm/url`的`File`新增`isExists`方法。
+- `Path`的`makeUsable`方法成功后不再返回bool，而是返回当前对象，方便链式调用。
 
 ## 2025-11-16
 ### v1.2.2

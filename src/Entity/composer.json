@@ -24,7 +24,7 @@
     },
     "require": {
         "php": "^8.0.2",
-        "illuminate/contracts": "^9.52"
+        "phparm/contract-serialization": "^1.0"
     },
     "autoload": {
         "psr-4": {

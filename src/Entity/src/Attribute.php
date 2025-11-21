@@ -6,9 +6,9 @@ namespace Phparm\Entity;
 
 use ArrayIterator;
 use BadMethodCallException;
+use Phparm\Contract\Serialization\Arrayable;
+use Phparm\Contract\Serialization\Jsonable;
 use Phparm\Entity\Traits\PrefixMethod;
-use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Contracts\Support\Jsonable;
 use IteratorAggregate;
 use JsonSerializable;
 use Stringable;
@@ -36,7 +36,7 @@ abstract class Attribute implements IteratorAggregate, Arrayable, Jsonable, Stri
         if ($prefixResult && is_array($prefixResult)) {
             return call_user_func(...$prefixResult);
         }
-        throw new BadMethodCallException('Unsupported operation');
+        throw new BadMethodCallException(sprintf('"%s" method is undefined.', $methodName));
     }
 
     public function __toString(): string
@@ -45,7 +45,7 @@ abstract class Attribute implements IteratorAggregate, Arrayable, Jsonable, Stri
     }
 
     /**
-     * @param null|Arrayable<TKey,TValue>|Jsonable|JsonSerializable|static<TKey,TValue> $attributes
+     * @param null|Arrayable<TKey,TValue>|Jsonable|JsonSerializable|static<TKey,TValue>|array $attributes
      * @param Option|null $option
      * @return array<TKey,TValue>
      */
@@ -64,7 +64,7 @@ abstract class Attribute implements IteratorAggregate, Arrayable, Jsonable, Stri
             return $attributes->toArray();
         }
         if ($attributes instanceof Jsonable) {
-            return json_decode($attributes->toJson(), true);
+            return json_decode($attributes->toJson(), true, 512, JSON_THROW_ON_ERROR);
         }
         if ($attributes instanceof JsonSerializable) {
             return $attributes->jsonSerialize();

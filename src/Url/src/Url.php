@@ -6,7 +6,6 @@ namespace Phparm\Url;
 
 use Phparm\Entity\Attribute;
 use Phparm\Entity\Option;
-use Illuminate\Contracts\Support\Arrayable;
 use InvalidArgumentException;
 
 use function \parse_url;
@@ -47,7 +46,7 @@ class Url extends Attribute
     public string $fragment;
 
     /**
-     * @param Arrayable<TKey,TValue>|string $attributes
+     * @param array|string $attributes
      * @param Option|null $option
      */
     public function __construct($attributes, ?Option $option = null)
@@ -81,7 +80,7 @@ class Url extends Attribute
     }
 
     /**
-     * @param Arrayable<TKey,TValue>|string $attributes
+     * @param array|string $attributes
      * @param Option|null $option
      * @return array
      */

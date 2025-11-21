@@ -38,7 +38,12 @@ class File extends Attribute
 
     public function isDir(): bool
     {
-        return is_dir(Path::join($this->dirname, $this->basename));
+        return is_dir($this->absolute());
+    }
+
+    public function isExists(): bool
+    {
+        return file_exists($this->absolute());
     }
 
     public function absolute(): string

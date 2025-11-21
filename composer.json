@@ -21,7 +21,6 @@
     ],
     "type": "library",
     "require": {
-        "illuminate/contracts": "^9.52",
         "php": "^8.0.2"
     },
     "require-dev": {
