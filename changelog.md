@@ -1,6 +1,6 @@
 
-{{date}}
-{{version}}
+## {{date}}
+### {{version}}
 - `Path::join`过滤空字符串参数，详情查看单元测试`testEmptyPath`方法。
 - 引入`phparm/contract-serialization`包，去除`illuminate/contracts`包（下面简称ic）。为什么？
   - 本包的版本号管理陷入被动，影响某些场景下项目的引入使用，会造成安装冲突。
