@@ -1,6 +1,8 @@
 {
     "name": "phparm/phparm",
     "description": "Sharp Code, In Your Hands.",
+    "license": "MIT",
+    "type": "library",
     "keywords": [
         "php",
         "utility",
@@ -9,8 +11,6 @@
         "utility-library",
         "utility-function"
     ],
-    "homepage": "https://github.com/phparm/phparm",
-    "license": "MIT",
     "authors": [
         {
             "name": "GHJayce",
@@ -19,13 +19,23 @@
             "role": "Developer"
         }
     ],
-    "type": "library",
+    "homepage": "https://github.com/phparm/phparm",
+    "support": {
+        "issues": "https://github.com/phparm/phparm/issues",
+        "docs": "https://phparm.github.io/phparm"
+    },
     "require": {
-        "php": "^8.0.2"
+        "php": "^8.0.2",
+        "phparm/contract-serialization": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.6",
         "symplify/monorepo-builder": "^11.2"
+    },
+    "replace": {
+        "phparm/entity": "1.2.2",
+        "phparm/path": "1.2.2",
+        "phparm/url": "1.2.2"
     },
     "autoload": {
         "psr-4": {
@@ -46,14 +56,5 @@
         "test": [
             "phpunit"
         ]
-    },
-    "replace": {
-        "phparm/entity": "1.2.2",
-        "phparm/path": "1.2.2",
-        "phparm/url": "1.2.2"
-    },
-    "support": {
-        "issues": "https://github.com/phparm/phparm/issues",
-        "docs": "https://phparm.github.io/phparm"
     }
 }
