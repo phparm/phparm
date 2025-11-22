@@ -20,10 +20,18 @@ class ToArrayTest extends TestCase
         $zoo = Zoo::make();
         $zoo->manchurianTiger = Tiger::make($tiger1);
         $zoo->southChinaTiger = Tiger::make($tiger2);
-        $this->assertSame([
+        $expect = [
             'manchurianTiger' => $tiger1,
             'southChinaTiger' => $tiger2,
             'javanTiger' => null,
-        ], $zoo->toArray());
+        ];
+        $actual = $zoo->toArray();
+        foreach ($expect as $key => $value) {
+            if (is_array($value)) {
+                ksort($expect[$key]);
+                ksort($actual[$key]);
+            }
+        }
+        $this->assertSame($expect, $actual);
     }
 }

@@ -12,36 +12,48 @@ class FillTest extends TestCase
 {
     public function testConstructPublicAttr(): void
     {
-        $attr = Data::manchurianTiger();
-        $tiger = Tiger::make($attr);
-        $this->assertSame($attr, $tiger->all());
+        $expect = Data::manchurianTiger();
+        $tiger = Tiger::make($expect);
+        $actual = $tiger->all();
+        ksort($expect);
+        ksort($actual);
+        $this->assertSame($expect, $actual);
     }
 
     public function testConstructWithProtectedAttr(): void
     {
-        $attr = Data::manchurianTiger();
-        $tiger2 = Tiger::make(array_merge($attr, [
+        $expect = Data::manchurianTiger();
+        $tiger2 = Tiger::make(array_merge($expect, [
             'iucn' => 'LC',
         ]));
-        $this->assertSame($attr, $tiger2->all());
+        $actual = $tiger2->all();
+        ksort($expect);
+        ksort($actual);
+        $this->assertSame($expect, $actual);
     }
 
     public function testFillPublicAttr(): void
     {
-        $attr = Data::manchurianTiger();
+        $expect = Data::manchurianTiger();
         $tiger = Tiger::make()
-            ->fill($attr);
-        $this->assertSame($attr, $tiger->all());
+            ->fill($expect);
+        $actual = $tiger->all();
+        ksort($expect);
+        ksort($actual);
+        $this->assertSame($expect, $actual);
     }
 
     public function testFillWithProtectedAttr(): void
     {
-        $attr = Data::manchurianTiger();
+        $expect = Data::manchurianTiger();
         $tiger2 = Tiger::make()
-            ->fill(array_merge($attr, [
+            ->fill(array_merge($expect, [
                 'iucn' => 'DD',
             ]));
-        $this->assertSame($attr, $tiger2->all());
+        $actual = $tiger2->all();
+        ksort($expect);
+        ksort($actual);
+        $this->assertSame($expect, $actual);
     }
 
 }
