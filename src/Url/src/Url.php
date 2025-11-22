@@ -126,7 +126,7 @@ class Url extends Attribute
     public function parse(string $url): array
     {
         if (!str_starts_with($url, 'http')) {
-            throw new InvalidArgumentException('Invalid url');
+            throw new InvalidArgumentException(sprintf('Invalid url: "%s"', $url));
         }
         return parse_url($url) ?: [];
     }
