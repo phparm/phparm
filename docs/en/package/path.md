@@ -24,16 +24,17 @@ Given `/path-a/path-b/file.readme`:
 
 ### Methods
 
-| Method               | Description                          |
-|:--------------------:|:------------------------------------:|
-| `listAll()`          | List all items under the path, excluding `.` and `..`. |
-| `makeUsable()`       | Create the path if it does not exist. |
-| `Path::join()`       | Join multiple path segments.         |
-| `Path::absolute()`   | Resolve the path to an absolute path. |
+|       Method       |                      Description                       |
+|:------------------:|:------------------------------------------------------:|
+|    `listAll()`     | List all items under the path, excluding `.` and `..`. |
+|   `makeUsable()`   |         Create the path if it does not exist.          |
+|   `Path::join()`   |              Join multiple path segments.              |
+| `Path::absolute()` |         Resolve the path to an absolute path.          |
 
 ### Usage
 
 #### listAll
+
 ```php
 <?php
 
@@ -59,6 +60,7 @@ $list = Path::make($packageDirPath)
 ```
 
 #### makeUsable
+
 ```php
 <?php
 
@@ -79,6 +81,7 @@ Path::make($path)
 ```
 
 #### join
+
 ```php
 <?php
 
@@ -94,6 +97,7 @@ echo $path; // /var/www/path-a/path-b
 ```
 
 #### absolute
+
 ```php
 <?php
 
@@ -112,18 +116,21 @@ echo $path; // /path-b
 
 The class `\Phparm\Path\File` extends `\Phparm\Entity\Attribute`.
 
-It is an object-oriented representation of [pathinfo](https://www.php.net/manual/en/function.pathinfo.php); its properties correspond to the same fields.
+It is an object-oriented representation of [pathinfo](https://www.php.net/manual/en/function.pathinfo.php); its
+properties correspond to the same fields.
 
 ### Methods
 
-| Method            | Description        |
-|:-----------------:|:------------------:|
-| `isDir()`         | Whether the path is a directory. |
-| `absolute()`      | Return the absolute path.         |
+|    Method    |           Description            |
+|:------------:|:--------------------------------:|
+|  `isDir()`   | Whether the path is a directory. |
+|  `exists()`  |     Whether the file exists.     |
+| `absolute()` |    Return the absolute path.     |
 
 ### Usage
 
 Directory structure:
+
 ```txt
 ├── folder1/
 │   ├── file1.txt
@@ -133,6 +140,7 @@ Directory structure:
 ```
 
 Examples:
+
 ```php
 <?php
 

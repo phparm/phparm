@@ -25,8 +25,8 @@ composer require phparm/entity
 | `make()`          | 静态方法，创建实体类实例。                                                       |
 | `fill()`          | 填充实体公有属性。                                                           |
 | `all()`           | 获取所有实体公有属性。                                                         |
-| `toArray()`       | 将实体公有属性转换为数组。<br>实现接口：`\Illuminate\Contracts\Support\Arrayable`     |
-| `toJson()`        | 将实体公有属性转换为JSON字符串。<br>实现接口：`\Illuminate\Contracts\Support\Jsonable` |
+| `toArray()`       | 将实体公有属性转换为数组。<br>实现接口：`\Phparm\Contract\Serialization\Arrayable`     |
+| `toJson()`        | 将实体公有属性转换为JSON字符串。<br>实现接口：`\Phparm\Contract\Serialization\Jsonable` |
 | `jsonSerialize()` | 将实体公有属性序列化为json。<br>实现接口：`\JsonSerializable`                        |
 
 | 其他         | 说明                                                 |

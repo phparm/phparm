@@ -26,8 +26,8 @@ An abstract class used to define entity attributes.
 | `make()`              | Static method to create an instance of the entity class.                                    |
 | `fill()`              | Fills public entity attributes.                                                             |
 | `all()`               | Gets all public entity attributes.                                                          |
-| `toArray()`           | Converts public entity attributes to an array.<br>Implements: `\Illuminate\Contracts\Support\Arrayable`     |
-| `toJson()`            | Converts public entity attributes to a JSON string.<br>Implements: `\Illuminate\Contracts\Support\Jsonable` |
+| `toArray()`           | Converts public entity attributes to an array.<br>Implements: `\Phparm\Contract\Serialization\Arrayable`     |
+| `toJson()`            | Converts public entity attributes to a JSON string.<br>Implements: `\Phparm\Contract\Serialization\Jsonable` |
 | `jsonSerialize()`     | Serializes public entity attributes to JSON.<br>Implements: `\JsonSerializable`                        |
 
 | Others        | Description                                                 |
