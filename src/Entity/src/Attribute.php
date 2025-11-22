@@ -36,7 +36,7 @@ abstract class Attribute implements IteratorAggregate, Arrayable, Jsonable, Stri
         if ($prefixResult && is_array($prefixResult)) {
             return call_user_func(...$prefixResult);
         }
-        throw new BadMethodCallException(sprintf('"%s" method is undefined.', $methodName));
+        throw new BadMethodCallException(sprintf('Method "%s" is undefined.', $methodName));
     }
 
     public function __toString(): string
