@@ -31,4 +31,16 @@ class FileTest extends TestCase
         $this->assertSame('Path', $file->basename);
         $this->assertSame('Path', $file->filename);
     }
+
+    public function testExists(): void
+    {
+        $actual = File::make(Path::join(__DIR__, 'FileTest.php'))->exists();
+        $this->assertTrue($actual);
+    }
+
+    public function testNotExists(): void
+    {
+        $actual = File::make(Path::join(__DIR__, 'FileTest-cc.php'))->exists();
+        $this->assertFalse($actual);
+    }
 }

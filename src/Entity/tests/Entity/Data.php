@@ -21,17 +21,17 @@ class Data
 
     public static function manchurianTiger(): array
     {
-        return [
+        return static::tigerTaxonomy() + [
             'name' => 'Manchurian tiger', // 东北虎
             'age' => 5,
-        ] + static::tigerTaxonomy();
+        ];
     }
 
     public static function southChinaTiger(): array
     {
-        return [
+        return static::tigerTaxonomy() + [
             'name' => 'South China Tiger', // 华南虎
             'age' => 6,
-        ] + static::tigerTaxonomy();
+        ];
     }
 }

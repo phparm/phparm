@@ -41,7 +41,7 @@ class File extends Attribute
         return is_dir($this->absolute());
     }
 
-    public function isExists(): bool
+    public function exists(): bool
     {
         return file_exists($this->absolute());
     }

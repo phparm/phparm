@@ -2,10 +2,12 @@
 {{date}}
 {{version}}
 - `Path::join`过滤空字符串参数。
-- 引入`phparm/contract-serialization`包，去除`illuminate/contracts`包，为什么？
-  - 版本号不好管理，会跟着laravel走。
-- `phparm/url`的`File`新增`isExists`方法。
-- `Path`的`makeUsable`方法成功后不再返回bool，而是返回当前对象，方便链式调用。
+- 引入`phparm/contract-serialization`包，去除`illuminate/contracts`包（下面简称ic）。为什么？
+  - 本包的版本号管理陷入被动，影响某些场景下项目的引入使用，会造成安装冲突。
+    - 例如：ic包不同版本对php的约束不同，例如`v12.39.0`需要php最低8.2，实际本包也支持8.2，但由于本包最低支持8.0.2，所以最高只能支持ic包`v9.52.16`的版本，如果某些项目引入了高版本的ic包的情况下再引入本包，composer就会提示版本冲突无法安装。
+  - ic包含的接口过多，且有一部分是针对laravel而定的接口，本包目前实际只用到其中的`Arrayable`和`Jsonable`接口，没必要引入整个ic包。
+- `phparm/url`的`File`新增`exists`方法，用于检测文件是否存在。
+- `phparm/path`的`Path`的`makeUsable`方法成功后不再返回bool，而是返回当前对象，方便链式调用。
 
 ## 2025-11-16
 ### v1.2.2
